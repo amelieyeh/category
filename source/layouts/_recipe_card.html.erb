@@ -1,0 +1,31 @@
+<li class="cate-recipe-card hot chosen" itemscope itemtype="http://schema.org/Recipe">
+  <div class="actions">
+    <% link_to "#", :class => "btn-favorite btn-follow-recipe", "data-recipe-id" => "51680", "data-remote" => "true", "data-text-follow" => "收藏", "data-text-following" => "已收", "data-text-unfollow" => "取消" do %>
+      <i class="icon-heart-empty"></i>
+      <i class="icon-heart"></i>
+      <span>收藏</span>
+    <% end %>
+    <% link_to "#myModal", :class => "list-btn btn-favorite hidden", :style => "margin-left: 5px;" do %>
+      <i class="icon-reorder"></i>
+      <span>分類</span>
+    <% end %>
+  </div>
+  <% link_to "#", :title => "蒜煎牛排" do %>
+    <%= image_tag "http://placehold.it/200x150", :alt => "蒜煎牛排", :itemprop => "image" %>
+  <% end %>
+  <div class="flags">
+    <div class="flag-hot"></div>
+    <div class="flag-chosen"></div>
+  </div>
+  <div class="card-info">
+    <div class="info">
+      <%= link_to "蒜煎牛排", "#", "data-title" => "蒜煎牛排", :itemprop => "name" %>
+      <ul class="meta">
+        <li class="fav-count">847</li>
+        <li class="like-count">26</li>
+        <li class="view-count">17428</li>
+      </ul>
+      <p itemprop="description">簡單的配料加上品質不錯的牛肉，煎上 10 分鐘就可以完成一道不錯的牛排。加上點川燙青菜或馬鈴薯泥，就是美好的週末晚餐主菜囉。</p>
+    </div>
+  </div>
+</li>

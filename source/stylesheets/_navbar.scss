@@ -1,0 +1,277 @@
+.navbar {
+  position: fixed;
+  z-index: 10;
+
+  .ie8 & {
+    display: block;
+  }
+
+  .dropdown-menu {
+    @include border-radius(4px);
+
+    margin-top: 1px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid #ccc;
+      border-bottom-color: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: -7px;
+      left: 9px;
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid #fff;
+      position: absolute;
+      top: -6px;
+      left: 10px;
+    }
+  }
+
+  .dropdown .caret {
+    margin-top: 10px;
+  }
+
+  .navbar-inner, .navbar-inner .container {
+    @include box-shadow(none);
+
+    border: none;
+  }
+
+  .navbar-inner {
+    background: image-url("header-bg.png") 500px bottom repeat-x;
+    filter: none;
+    height: 45px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    .ie8 & {
+      filter: none;
+    }
+
+    .container {
+      margin: 0 auto;
+
+      .nav-collapse {
+        overflow: visible;
+
+        li {
+          &.current,
+          &.active a {
+            @include box-shadow(none);
+
+            background-color: transparent;
+
+            span {
+              color: lighten(#7A3000,15%);
+
+              span {
+                color: white;
+              }
+
+              i {
+                color: lighten(#7A3000,15%);
+              }
+            }
+          }
+
+          a {
+            .ie & {
+              font-family: Helvetica, Arial, Geneva, sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a.brand {
+    $logo-file: "logo-ribbon-mm-2x.png";
+
+    background: image-url($logo-file) no-repeat;
+    @include background-size((image-width($logo-file) / 2) (image-height($logo-file) / 2));
+
+    display: block;
+    height: image-height($logo-file) / 2;
+    padding: 0;
+    position: relative;
+    text-indent: -9999px;
+    top: 2px;
+    width: image-width($logo-file) / 2;
+
+    .ie8 & {
+      background: image-url("logo-ribbon-mm.png") no-repeat;
+    }
+
+    &:hover {
+      -webkit-transition-property: top;
+      -webkit-transition-duration: 0.2s;
+
+      opacity: 0.8;
+    }
+
+    &:active {
+      -webkit-transition-property: top;
+      -webkit-transition-duration: 0.2s;
+
+      top: 5px;
+    }
+  }
+
+  .nav-collapse {
+    @include clearfix;
+  }
+
+  ul.nav {
+    margin-top: 6px;
+    margin-left: 0;
+    margin-right: 0;
+
+    & > li {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+
+      &.dropdown.open > .dropdown-toggle,
+      &.dropdown.active > .dropdown-toggle,
+      &.dropdown.open.active > .dropdown-toggle {
+        background-color: transparent;
+        color: #c74e00;
+      }
+
+      &.divider-vertical {
+        background-color: lighten(#420, 10%);
+        border-right-color: lighten(#420, 60%);
+        height: 20px;
+        margin: 5px 9px;
+      }
+
+      a {
+        @include text-shadow(0 1px 0 rgba(255, 255, 255, 0.4));
+
+        color: #7a3000;
+        font-size: 14px;
+        font-weight: bold;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 0 0 20px;
+        position: relative;
+
+        .ie & {
+          font-family: Helvetica, Arial, Geneva, sans-serif;
+        }
+
+        .red {
+          font-weight: normal;
+        }
+
+        &:hover {
+          color: lighten(#7A3000,15%);
+
+          i{
+            color: lighten(#7A3000,15%);
+          }
+        }
+
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+
+        .ie8 & {
+          font-size: 13px;
+        }
+      }
+
+      &.facebook-s {
+        display: none;
+      }
+
+      &.categories,
+      &.facebook,
+      &.facebook-s {
+        a {
+          height: 24px;
+          line-height: 24px;
+        }
+      }
+
+      &.facebook {
+        i.icon-facebook-sign {
+          font-size: 16px;
+        }
+      }
+
+      &.user,
+      &.categories {
+        a {
+          height: 24px;
+          line-height: 24px;
+        }
+
+        .dropdown-menu {
+          min-width: 110px;
+
+          li {
+            & > a {
+              color: #7a3000;
+              font-size: 12px;
+              padding-left: 10px;
+              padding-right: 10px;
+
+              &:hover,
+              &:focus {
+                background-image: none;
+                background-color: #fdf7e2;
+
+                i {
+                  color: lighten(#7A3000,15%);
+                }
+              }
+
+              img {
+                @include border-radius(2px);
+
+                border: 1px solid rgba(170, 170, 171, 0.5);
+                height: 16px;
+                margin-right: 3px;
+                position: relative;
+                top: -2px;
+                width: 16px;
+              }
+
+              i {
+                display: inline-block;
+                font-size: 16px;
+                margin-right: 6px;
+                margin-top: -1px;
+                width: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      &.categories {
+        .dropdown-menu {
+          left: 17px;
+          li {
+            a {
+              i {
+                font-size: 12px;
+                margin-right: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

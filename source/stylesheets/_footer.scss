@@ -1,0 +1,115 @@
+footer {
+  @include box-shadow(0 1px 0 white);
+
+  border-top: 1px solid #c7c7c7;
+  background-color: darken(#efede8, 3%);
+  margin-top: 20px;
+  padding-bottom: 0;
+  padding-top: 20px;
+
+  .container {
+    .row {
+      .span2,
+      .span3,
+      .span4 {
+        @include box-sizing(border-box);
+
+        padding-left: 10px;
+
+        &:nth-child(2),
+        &:nth-child(4),
+        &:nth-child(5) {
+          border-left: 1px solid rgba(0,0,0, 0.08);
+        }
+
+        &:nth-child(5) {
+          p {
+            color: #666;
+            text-align: center;
+
+            img {
+              margin-bottom: 5px;
+            }
+
+            a.btn-primary {
+              color: white;
+              display: block;
+              font-size: 14px;
+              font-weight: normal;
+              margin: 5px auto 0 auto;
+              text-decoration: none;
+              width: 115px;
+            }
+          }
+        }
+
+        h4 {
+          color: #666;
+          font-size: 13px;
+          font-weight: bold;
+          margin: 5px;
+        }
+
+        ul.footer-links {
+          list-style: none;
+          margin: 0 0 10px 5px;
+
+          li {
+            color: #777;
+            line-height: 1.4em;
+
+            a {
+              color: #777;
+              font-size: 13px;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            span.label-important {
+              background-color: #FF0000;
+              font-size: 9px;
+              line-height: 1.2em;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .company-info {
+    background-color: #ddcaa5;
+    height: 36px;
+    margin: 20px auto 0 auto;
+
+    ul {
+      margin: 0 auto;
+      width: 90%;
+
+      li {
+        color: #666;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 36px;
+        margin-left: 50px;
+
+        p {
+          color: #666;
+          line-height: 36px;
+        }
+
+        a {
+          color: #666;
+          font-size: 13px;
+          vertical-align: middle;
+
+          &:hover {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}

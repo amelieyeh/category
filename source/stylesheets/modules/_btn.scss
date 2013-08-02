@@ -1,0 +1,25 @@
+/* Buttons
+================================================== */
+.btn-post-topic {
+  @include sassy-button("glass", 4px, 18px, #99181c);
+
+  float: right;
+  height: 1.2em;
+  line-height: 1.2em;
+  margin: 20px 0 10px 0;
+
+  &:hover {
+    background: #99181c;
+    color: #fff;
+  }
+
+  &:active {
+    background: darken(#99181c, 10%);
+  }
+
+  i.icon-pencil {
+    display: inline-block;
+    height: 1em;
+    width: 15px;
+  }
+}

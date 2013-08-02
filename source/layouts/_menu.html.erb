@@ -1,0 +1,172 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to '愛料理 - 食譜社群網站', "/?rel=logo", :title => "愛料理 - 食譜社群網站", :class => "brand", :rel => "nofollow" %>
+      <div class="nav-collapse">
+        <%#= semantic_navigation :top_navigation, config: :bootstrap, class: "pull-left" do |n| %>
+        <ul class="pull-left nav nav-pills" id="top_navigation">
+          <li class="dropdown categories">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" onClick="_gaq.push(['_trackEvent', 'Menu', 'Click', 'Featured-Categories' + ' page: ' + document.location.pathname + document.location.search + ' ref: ' + document.referrer]);">逛食譜<i class="icon-caret-down"></i></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li class="hide-nav">
+                <a href="/recipes/popular?ref=nav-menu"><span><i class="icon-asterisk"></i>熱門食譜</span></a>
+              </li>
+              <li class="hide-nav">
+                <a href="/recipes/latest?ref=nav-menu"><span><i class="icon-asterisk"></i>新到食譜</span></a>
+              </li>
+
+              <%# @menu_categories.each do |category| %>
+                <%# n.item raw("<i class='icon-asterisk'></i>#{ category.name }"),
+                          category_path(category, order: "overall", ref: "nav-menu"),
+                          highlights_on: [ proc { params[:id] == category.id } ],
+                          id: "category_#{category.id}" %>
+              <%# end %>
+              <li class="divider"></li>
+              <%# @submenu_links.each do |link| %>
+                <%# n.item raw("<i class='icon-arrow-right'></i>#{ link.name }"), "#{ link.url }?ref=nav-menu" %>
+              <%# end %>
+              <!-- <li class="divider"></li>
+              <li><a href="#"><i class="icon-arrow-right"></i>更多食譜...</a></li> -->
+
+            </ul>
+          </li>
+
+          <!-- <li><a href="http://icook.tw/dishes"><span class="red">NEW</span><span>逛料理</span></a></li> -->
+          <%# n.item raw('愛料理問答'),
+                    questions_path(ref: "nav"),
+                    highlights_on: [/^\/questions/],
+                    id: "questions" %>
+          <%# n.item "熱門食譜",
+                    popular_recipes_path(ref: "nav", order: "overall"),
+                    highlights_on: [/^\/recipes\/popular$/],
+                    id: "popular-recipes" %>
+          <%# n.item "新到食譜",
+                    latest_recipes_path(ref: "nav"),
+                    highlights_on: [/^\/recipes\/latest$/],
+                    id: "latest-recipes" %>
+          <%# @menu_links.each do |link| %>
+            <%# n.item link.name,
+                      "#{link.url}?ref=nav",
+                      highlights_on: [/#{ link.url }/],
+                      id: "promotion-links-#{ link.id }" %>
+          <%#end %>
+        </ul>
+        <ul class="nav pull-right nav-pills">
+          <li class="search" style="display:none;">
+            <form accept-charset="UTF-8" action="/recipes/fulltext_search" method="get">
+              <%#= text_field_tag :query, params[:query].blank? ? nil : params[:query], :placeholder => '搜尋食譜、食材' %>
+            </form>
+          </li>
+
+          <%# if user_signed_in? %>
+         <!--  <li class="user-favorites">
+            <%#= link_to favorited_user_recipes_path(current_user, :ref => "nav") do %>
+              <i class="icon-heart"></i>我收藏的
+            <%# end %>
+          </li> -->
+
+          <!-- <li class="dropdown user">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-user"></i>帳號 <i class="icon-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%#= link_to current_user, :class => "author", :rel => "me" do %>
+                  <i class="icon-user"></i>個人首頁
+                <%# end %>
+              </li>
+              <li>
+                <%#= link_to edit_user_path(current_user) do %>
+                  <i class="icon-cog"></i>個人設定
+                <%# end %>
+              </li>
+              <li>
+                <%#= link_to user_lists_path(current_user), { :remote => true } do %>
+                  <i class="icon-list"></i>管理收藏分類
+                <%# end %>
+              </li>
+              <li>
+                <%#= link_to drafted_user_recipes_path(current_user) do %>
+                  <i class="icon-pencil"></i>我的草稿
+                <%# end %>
+              </li>
+              <li>
+                <%#= link_to subscriptions_of_user_recipes_path(current_user) do %>
+                  <i class="icon-group"></i>我訂閱的食譜作者
+                <%# end %>
+              </li>
+              <li class='preview-history-helper' data-intro='<b>從今天起，您可以更輕鬆找到以前逛過的食譜了</b>' data-step='1' data-position='left'>
+                <a href='#' class='browser-history'>
+                  <i class="icon-book"></i>食譜瀏覽歷史
+                </a>
+              </li>
+              <li class='preview-history-helper'>
+                <a href='#' class='browser-latest'>
+                  <i class="icon-book"></i>新進食譜
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li class="sticker">
+                <%#= link_to stickers_of_user_path(current_user) do %>
+                  <i class="icon-gift"></i>部落格貼紙
+                <%# end %>
+              </li>
+              <li class="invite">
+              <%# if current_user.by_omniauth? %>
+                <a href="/invites/facebook"><i class="icon-envelope"></i>邀請朋友</a>
+              <%# else %>
+                <%#= link_to new_user_invitation_path do %>
+                  <i class="icon-envelope"></i>邀請朋友
+                <%# end %>
+              <%# end %>
+              </li>
+              <li class="divider"></li>
+              <%# if current_user.has_role?(:admin) %>
+              <li>
+                <%#= link_to "https://github.com/polydice/iCook/commit/#{GIT_VERSION[0,7]}" do %>
+                <i class=" icon-github"></i>線上版本 <%#= GIT_VERSION[0,7] %>
+                <%# end %>
+              </li>
+              <li>
+                <%#= link_to admin_dashboard_index_path do %>
+                <i class="icon-dashboard"></i>後台
+                <%# end %>
+              </li>
+              <%# end  %>
+              <li>
+                <%#= link_to (destroy_user_session_path), :method => :delete do %>
+                  <i class="icon-signout"></i>登出
+                <%# end %>
+              </li>
+            </ul>
+          </li> -->
+        <%# else %>
+          <li class="facebook">
+            <% link_to "#", :rel => "nofollow", :style => "width: 60px; float: left;" do %>
+              登入
+            <% end %>
+            <% link_to "#", :rel => "nofollow", :style => "width: 80px; float: left;", :class => "hidden-phone" do %>
+              <i class="icon-edit"></i>寫食譜
+            <% end %>
+            <% link_to "#", :rel => "nofollow", :class => "hidden-desktop hidden-tablet", :style => "float: left;" do %>
+              註冊
+            <% end %>
+          </li>
+          <li class="facebook-s">
+            <% link_to "#", :rel => "nofollow", :style => "float: left;" do %>
+              <i class="icon-facebook-sign"></i>登入
+            <% end %>
+          </li>
+        <%# end %>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>

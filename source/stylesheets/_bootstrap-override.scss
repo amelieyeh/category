@@ -1,0 +1,37 @@
+body{
+  background: #f6eeec;
+  padding-top: 60px;
+}
+
+.container {
+  width: 1000px;
+
+  .row {
+    margin-left: 0;
+  }
+}
+
+.pagination {
+  margin: 0 0 20px;
+  text-align: center;
+  
+  ul {
+    box-shadow: none;
+  }
+
+  li a {
+    color: #666;
+    font-size: 14px;
+  }
+
+  li.active a,
+  li:hover a {
+    color: #fff;
+  }
+}
+
+.pagination ul > li > span {
+  background: none;
+  border-width: 0 1px 0 0;
+  color: #999;
+}

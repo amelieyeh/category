@@ -1,0 +1,180 @@
+<div class="container">
+  <div class="row">
+    <div id="cate-hero">
+      <div>
+        <header>
+          <div class="title-icon"></div>
+          <h1>牛肉料理 Beef</h1>
+        </header>
+        <p>
+          牛肉是全世界人喜愛的食品，味道鮮美含有豐富的鐵質，脂肪含量低，蛋白質含量高，能提高抵抗力，對正在生長發育及手術後、病後調養的人在補充失血、修復組織等方面特別適合牛肉料理！  
+        </p>
+        <p class="img-info">
+          <span>&#8226;&nbsp;圖片選自愛料理</span>
+          <%= link_to "【[吳双の愛妻小菜】辣椒魚卵拌牛肉", "#", :rel => "nofollow" %>
+        </p>
+      </div>
+      <%= image_tag "cow.jpg", :alt => "牛肉料理" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <div id="cate-recipes">
+        <ul>
+          <% 8.times do %>
+            <%= partial "layouts/recipe_card" %>
+          <% end %>    
+        </ul>  
+        <div class="ad">
+          <%= image_tag "http://placehold.it/468x60" %>
+        </div>
+        <div class="pagination">
+          <ul>
+            <li class="active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <span>...</span>
+            </li>
+            <li>
+              <a href="#">下一頁 »</a>
+            </li>
+            <li>
+              <a href="#">最後頁</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h3>其他人正在看的食譜</h3>
+      <div id="recipe-slide">
+        <div class="arrow-left">
+          <% link_to "#", "allow" => "true", :id => "left-btn" do %>
+            <i class="icon-chevron-left"></i>
+          <% end %>
+        </div>
+        <div class="slider">
+          <ul>
+            <% 6.times do %>
+              <%= partial "layouts/recipe_card" %>
+            <% end %>
+          </ul>
+        </div>
+        <div class="arrow-right">
+          <% link_to "#", "allow" => "true", :id => "right-btn" do %>
+            <i class="icon-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar span4">
+      <section>
+        <h3>愛料理知識家</h3>
+        <div class="explanation">
+          <p>
+            牛肉含有豐富的維生素和蛋白質可幫住你增強免疫力，從而有助於緊張訓練後身體的恢復。而牛肉中的肌氨酸含量比任何其它食品都高，這使它對增長肌肉、增強力量特別有效。
+          </p>
+          <p>
+            特別注意印度教徒不食用牛肉外，許多亞洲人也不吃牛肉，請朋友吃飯前別忘了先問問看喔!
+          </p>
+        </div>
+      </section>
+      <section>
+        <h3>本日熱門食譜</h3>
+        <ul class="hot-recipes">
+          <% 3.times do %>
+            <%= partial "layouts/recipe_card" %>
+          <% end %>
+        </ul>
+      </section>
+      <section>
+        <h3>熱門討論主題</h3>
+        <ol id="sidebar-hot-topics" style="counter-reset: li 0">
+          <% 5.times do |i| %>  
+            <li class="sidebar-topic">
+              <% link_to "#" do %>
+                請問動物性與植物性鮮奶油差異在哪呢？素食者可以吃動物性鮮奶油嗎？
+              <% end %>
+              <div>
+                <ul>
+                  <li>10收藏</li>
+                  <li>2569人氣</li>
+                </ul>
+                <div class="reply-number">
+                  共13人回應
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ol>
+      </section>
+      <section>
+        <h3>推薦分類</h3>
+        <ul class="recommand-recipes">
+          <% 2.times do %>
+          <li>
+            <% link_to "#" do %>
+              <%= image_tag "http://placehold.it/280x100", :alt => "雞肉料理" %>
+              <span>雞肉料理</span>
+              <div class="mask"></div>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </section>
+      <section>
+        <h3>熱門關鍵字</h3>
+        <div class="hot-keywords">
+          <ul>
+            <li>
+              <a href="http://icook.tw/recipes/fulltext_search?query=檸檬">
+                <div class="mark">
+                  <span></span>下飯菜
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="http://icook.tw/recipes/fulltext_search?query=檸檬">
+                <div class="mark">
+                  <span></span>牛肉
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="http://icook.tw/recipes/fulltext_search?query=檸檬">
+                <div class="mark">
+                  <span></span>馬鈴薯
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="http://icook.tw/recipes/fulltext_search?query=檸檬">
+                <div class="mark">
+                  <span></span>三不五時簡單做
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="http://icook.tw/recipes/fulltext_search?query=檸檬">
+                <div class="mark">
+                  <span></span>氣炸鍋
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </aside>
+    <div class="sidebar-ad span4">
+      <%= image_tag "http://placehold.it/300x250" %>
+    </div>
+  </div>
+</div>

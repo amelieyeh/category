@@ -1,13 +1,16 @@
 /* Buttons
 ================================================== */
+
 .btn-post-topic {
   @include sassy-button("glass", 4px, 18px, #99181c);
-
+  
+  background-color: #99181c;
   float: right;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); //ie
   height: 1.2em;
   line-height: 1.2em;
   margin: 20px 0 10px 0;
-
+  
   &:hover {
     background: #99181c;
     color: #fff;

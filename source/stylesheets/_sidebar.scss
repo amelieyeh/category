@@ -1,0 +1,237 @@
+//sidebar 
+.sidebar {
+  padding: 20px 10px 10px;
+
+  h3 {
+    color: $title-color;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+
+  section > div {
+    margin-bottom: 15px;
+  }
+
+  .explanation {
+    border: 1px solid $border-color;
+    color: #666;
+    letter-spacing: 0.08em;
+    line-height: 1.6em;
+    padding: 10px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .sidebar-ad {
+    margin-left: 20px;
+  }
+}
+
+.hot-recipes {
+  border-top: 1px solid $border-color;
+  padding-top: 5px;
+
+  .cate-recipe-card {
+    height: 80px;
+    margin: 5px 0 0;
+    width: 100%;
+    
+    >.actions,
+    .flags,
+    li.like-count,
+    .card-info p {
+      display: none;
+    }
+
+    > a {
+      height: 80px;
+      left: 0;
+      width: 105px;
+    }
+    
+    .card-info {
+      height: 60px;
+      margin: 10px;
+      width: 50%;
+    }
+
+    .card-info a { 
+      color: #5c4444;
+      font-size: 13px;
+    }
+  }
+}
+
+#sidebar-hot-topics {
+  border: 1px solid #e6e4e3;
+  margin-left: 0;
+
+  > li {
+    border-top: 1px solid #e6e4e3;
+    padding: 10px 10px 10px 32px;
+    position: relative;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  > li a {
+    color: #5d4545;
+    letter-spacing: 0.1em;
+    line-height: 13px;
+    font-size: 13px;
+  }
+
+  > li:before {
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+    
+    background-color: #9a1f1f;
+    color: #fff;
+    content: counter(li);
+    counter-increment: li;
+    font-family: "Times New Roman",Times,serif;
+    font-size: 16px;
+    left: 8px;
+    line-height: 14px;
+    position: absolute;
+    top: 10px;
+    padding: 2px 5px;
+  }
+
+  > li > div {
+    @include clearfix;
+  }
+
+  ul li,
+  .reply-number {
+    font-size: 12px;
+    line-height: 12px;
+    margin: 8px 5px 0;
+  }
+
+  ul li {
+    color: #666;
+    float: left;
+    
+    &:first-child {
+      border-right: 1px solid #666;
+      padding-right: 5px;
+      margin: 8px 0 0;
+    }
+  }
+
+  .reply-number {
+    @include border-radius(10px);
+
+    background-color: #f6eeec;
+    color: #555;
+    float: right;
+    margin-top: 5px;
+    padding: 3px 6px;
+  }
+}
+
+.recommand-recipes {
+  li {
+    margin-bottom: 10px;
+    position: relative;
+
+    a {
+      color: #fff;
+      display: block;
+      height: 100px;
+    }
+
+    a:hover span {
+      text-decoration: underline;
+    }
+    
+    span {
+      bottom: 3px;
+      position: absolute;
+      right: 8px;
+      z-index: 3;
+    }
+
+    .mask {
+      background-color: #000;
+      opacity: 0.6;
+      filter: alpha(opacity=60) /0; //ie8
+      bottom: 0;
+      height: 25px;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+}
+
+.hot-keywords {
+  @include clearfix;
+
+  border: 1px solid #e6e4e3;
+  padding: 15px 15px 5px;  
+  
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;  
+  }
+
+  a {
+    display: block;
+    line-height: 14px;
+  }
+
+  .mark {
+    @include border-top-right-radius(4px);
+    @include border-bottom-right-radius(4px);
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #5e4645;
+    float: left;
+    padding: 5px 15px;
+    position: relative;
+
+    &:hover {
+      background-color: #eeede8;
+    }
+  }
+
+  span {
+    background: #940000;
+    display: block;
+    height: 22px;
+    left: -5px;
+    position: absolute;
+    top: 1px;
+    width: 4px;
+  }
+
+  span::after {
+    -webkit-font-smoothing: antialiased;
+    content: "\f111";
+    color: #940000;
+    float: left;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    text-decoration: inherit;
+    top: 4px;
+    width: 3px;
+  }
+}

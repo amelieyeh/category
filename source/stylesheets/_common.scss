@@ -1,0 +1,137 @@
+$border-color: #e6e4e3;
+$title-color: #991c1f;
+
+html {
+  font-family: sans-serif;
+}
+
+html.hasFontSmoothing-true {
+  font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+
+body {
+  background: #efede8;
+}
+
+ul,
+li {
+  list-style: none;
+  margin-left: 0;
+}
+
+.navbar.navbar-fixed-top {
+  -webkit-backface-visibility: hidden;
+}
+
+.breadcrumb {
+  background: none;
+  display: inline-block;
+  float: left;
+  margin: 0 10px 10px 20px;
+  padding: 0;
+
+  li {
+    text-shadow: none;
+    font-size: 12px;
+    
+    a {
+      color: #5e4645;
+    }
+  }
+
+  li:not(:last-child):after {
+    color: #999;
+    content: "\f105";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 6px;
+    margin-right: 6px;
+    width: 5px;
+  }
+}
+
+
+#order {
+  float: right;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin: 0 20px 10px 10px;
+  text-align: right;
+  // visibility: hidden;
+
+  li {
+    display: inline-block;
+    margin: 0 0 0 5px;
+
+    a {
+      @include box-sizing(border-box);
+      
+      color: #666;
+      display: inline-block;
+      line-height: 16px;
+      padding: 2px 5px;
+      text-align: right;
+
+      &:before {
+        -webkit-font-smoothing: antialiased;
+        content: "\f0d8";
+        color: #666;
+        display: inline-block;
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 14px;
+        height: 16px;
+        line-height: 16px;
+        margin-right: 3px;
+        text-decoration: inherit;
+        width: 8px;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:first-child {
+      line-height: 26px;
+      margin-left: 5px;
+    }
+  }
+
+  li.active {
+    @include border-radius(4px);
+
+    background: lighten(#5e4645, 60%);
+    border: 1px solid #5e4645;
+    text-align: center;
+
+    a,
+    &:hover a {
+      text-decoration: none;
+    }
+  }
+}
+
+.breadcrumb,
+#order {
+  line-height: 32px;
+}
+
+
+.row > .span12 {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+
+.span12 > a.btn-post-topic {
+  margin: 0 10px 10px 0;
+}
+
+

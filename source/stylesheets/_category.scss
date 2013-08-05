@@ -23,9 +23,11 @@ $sb-padding: 0.23em 0.94em;  // Sassy-Button padding
 @import "navbar";
 @import "footer";
 
-@import "layout";
 @import "modules/btn";
 @import "modules/recipe_card";
+@import "common";
+@import "sidebar";
+@import "layout";
 
 
 
